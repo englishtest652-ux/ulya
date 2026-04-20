@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Для тебя ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    background:black;
+    color:white;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+/* сцены */
+.scene{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 60px;
+}
+
+/* фон */
+.bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.45);
+}
+
+/* текст */
+.content{
+    position:relative;
+    max-width:900px;
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+    line-height:1.2;
+    font-size:20px;
+    z-index:2;
+}
+
+/* строки */
+.line{
+    opacity:0;
+    transform:translateY(25px);
+    transition:0.9s;
+    margin-bottom:18px;
+}
+
+.line.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* галереи */
+.gallery{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:240px;
+}
+
+.left{left:40px;}
+.right{right:40px;}
+
+.gallery img{
+    width:100%;
+    margin-bottom:14px;
+    border-radius:16px;
+    opacity:0;
+    transform:translateY(-60px) scale(0.95);
+    transition:1s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.gallery img.show{
+    opacity:0.95;
+    transform:translateY(0) scale(1);
+}
+
+/* частицы */
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+pointer-events:none;
+}
+
+/* финал */
+.final video{
+    width:100%;
+    height:80%;
+    object-fit:cover;
+}
+
+h1{
+    font-family:'Playfair Display';
+    font-size:64px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- ОБЛОЖКА -->
+<section class="scene">
+<div class="bg" style="background-image:url('cover.jpg')"></div>
+
+<div class="content">
+<h1 class="line">Это история о тебе</h1>
+<p class="line">о том как ты изменила мою жизнь</p>
+<p class="line">и как из обычных дней появилась ты</p>
+</div>
+</section>
+
+<!-- СЦЕНА 1 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg1.jpg')"></div>
+
+<div class="gallery left">
+<img src="1.jpg">
+</div>
+
+<div class="content">
+<p class="line">Скажем все началось с того что шёл уже какой то месяц моей работы когда будни были серыми однообразными</p>
+<p class="line">я вставал утром на работе работал делал напитки постоянно косячил и постоянно стоял и курил очень много</p>
+<p class="line">приближались дни когда я начал снова думать о том как зачем я живу и смысл в ней может все бросить</p>
+<p class="line">и честно в какой то момент все просто стало пустым</p>
+</div>
+
+<div class="gallery right">
+<img src="4.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 2 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg2.jpg')"></div>
+
+<div class="gallery left">
+<img src="7.jpg"><img src="8.jpg">
+</div>
+
+<div class="content">
+<p class="line">но в один из таких дней я зашел в игру</p>
+<p class="line">и увидел тебя</p>
+<p class="line">сначала ничего особенного</p>
+<p class="line">но почему то я постоянно возвращался к твоему дому</p>
+</div>
+
+<div class="gallery right">
+<img src="9.jpg"><img src="10.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 3 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg3.jpg')"></div>
+
+<div class="gallery left">
+<img src="11.jpg"><img src="12.jpg">
+</div>
+
+<div class="content">
+<p class="line">ты была там одна тихо играла сама по себе</p>
+<p class="line">и я не знаю почему но мне захотелось подойти</p>
+<p class="line">и начать с тобой общаться</p>
+</div>
+
+<div class="gallery right">
+<img src="13.jpg"><img src="14.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 4 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg4.jpg')"></div>
+
+<div class="gallery left">
+<img src="15.jpg"><img src="16.jpg">
+</div>
+<div class="content">
+<p class="line">ты дала мне еду</p>
+<p class="line">и это был самый простой момент</p>
+<p class="line">но почему то он запомнился сильнее всего</p>
+<p class="line">мне захотелось чтобы ты улыбалась чаще</p>
+</div>
+
+<div class="gallery right">
+<img src="17.jpg"><img src="18.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 5 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg5.jpg')"></div>
+
+<div class="gallery left">
+<img src="19.jpg"><img src="20.jpg">
+</div>
+
+<div class="content">
+<p class="line">я начал помогать тебе приносить ресурсы цветы</p>
+<p class="line">и мне правда нравилось видеть как ты радуешься</p>
+<p class="line">мне хотелось делать это снова и снова</p>
+</div>
+
+<div class="gallery right">
+<img src="21.jpg"><img src="22.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 6 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg6.jpg')"></div>
+
+<div class="gallery left">
+<img src="23.jpg"><img src="24.jpg">
+</div>
+
+<div class="content">
+<p class="line">я увидел тебя вживую</p>
+<p class="line">и в тот момент как будто всё вокруг остановилось</p>
+<p class="line">ты оказалась ещё красивее чем я мог представить</p>
+</div>
+
+<div class="gallery right">
+<img src="25.jpg"><img src="26.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 7 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg7.jpg')"></div>
+
+<div class="gallery left">
+<img src="27.jpg"><img src="28.jpg">
+</div>
+
+<div class="content">
+<p class="line">мы начали общаться больше дольше глубже</p>
+<p class="line">и я даже не заметил как ты стала чем то очень важным для меня</p>
+</div>
+
+<div class="gallery right">
+<img src="29.jpg"><img src="30.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 8 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg8.jpg')"></div>
+
+<div class="gallery left">
+<img src="31.jpg"><img src="32.jpg">
+</div>
+
+<div class="content">
+<p class="line">я долго думал стоит ли говорить</p>
+<p class="line">но понял если промолчу пожалею</p>
+</div>
+
+<div class="gallery right">
+<img src="33.jpg"><img src="34.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 9 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg9.jpg')"></div>
+
+<div class="gallery left">
+<img src="35.jpg"><img src="36.jpg">
+</div>
+
+<div class="content">
+<p class="line">и я сказал</p>
+<p class="line">я тебя люблю</p>
+<p class="line">и в этот момент сердце просто вырывалось</p>
+</div>
+
+<div class="gallery right">
+<img src="37.jpg"><img src="38.jpg">
+</div>
+</section>
+
+<!-- СЦЕНА 10 -->
+<section class="scene">
+<div class="bg" style="background-image:url('bg9.jpg')"></div>
+
+<div class="gallery left">
+
+</div>
+
+<div class="content">
+<p class="line">Юля, я люблю тебя безгранично. Я рад тому, что такая яркая, красивая и весёлая девушка появилась в моей жизни — твое присутствие в моей жизни красит её как ничто другое. Ты самое дорогое, что у меня есть, и, наверное, единственное, чего я по-настоящему боюсь — это потерять тебя, потому что я не представляю свою жизнь без тебя.
+Я долго думал, как это сказать, потому что все слова кажутся слишком маленькими по сравнению с тем, что я чувствую к тебе. Ты появилась в моей жизни тогда, когда я уже почти перестал верить, что что-то может по-настоящему зацепить… и просто изменила всё.
+С тобой даже самые обычные моменты становятся чем-то особенным. Я могу просто сидеть и говорить с тобой часами, и мне не надоедает. Мне спокойно рядом с тобой и одновременно невероятно волнительно.
+Ты красивая, но для меня это никогда не было главным. Главное — какая ты внутри. Ты добрая, настоящая, живая и очень тёплая. И именно за это я в тебя влюбился.
+Я люблю, как ты улыбаешься, как ты говоришь, как ты иногда злишься и даже как ты молчишь. Я люблю в тебе всё.
+И самое странное — рядом с тобой я становлюсь лучше. Мне хочется стараться, мне хочется быть тем, кто сможет сделать тебя счастливой.
+И если честно, мне просто важно, чтобы ты была рядом. Потому что ты — самое лучшее, что случилось со мной.</p>
+</div>
+
+<div class="gallery right">
+
+</div>
+</section>
+
+<!-- ФИНАЛ -->
+<section class="scene final">
+<video autoplay muted loop>
+<source src="final.mp4" type="video/mp4">
+</video>
+
+<div style="position:absolute;top:50%;width:100%;text-align:center;font-size:46px;font-family:Playfair Display;">
+Ты — самое лучшее, что случилось со мной
+</div>
+</section>
+
+<script>
+// текст
+const blocks=document.querySelectorAll('.content');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+let delay=0;
+e.target.querySelectorAll('.line').forEach(l=>{
+setTimeout(()=>l.classList.add('show'),delay);
+delay+=120;
+});
+}
+});
+});
+
+blocks.forEach(el=>observer.observe(el));
+
+// фото
+const images=document.querySelectorAll('.gallery img');
+
+const imgObserver=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add('show');
+}
+});
+});
+
+images.forEach(img=>imgObserver.observe(img));
+
+// частицы
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*0.6
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(255,255,255,0.2)";
+ctx.beginPath();
+
+particles.forEach(p=>{
+ctx.moveTo(p.x,p.y);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
+});
+
+ctx.fill();
+
+particles.forEach(p=>{
+p.y+=p.d;
+if(p.y>canvas.height)p.y=0;
+});
+}
+
+setInterval(draw,33);
+</script>
+
+</body>
+</html>
